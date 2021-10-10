@@ -1,19 +1,44 @@
-"""
-Google OpenIdConnect:
-    https://python-social-auth.readthedocs.io/en/latest/backends/google.html
-"""
-from .open_id_connect import OpenIdConnectAuth
-from .google import GoogleOAuth2
+from .oauth import BaseOAuth2
 
 
-class YRUOpenIdConnect(GoogleOAuth2, OpenIdConnectAuth):
+class YRUOpenIdConnect(BaseOAuth2):
+    """GitLab OAuth authentication backend"""
     name = 'yru-openidconnect'
-    OIDC_ENDPOINT = 'https://passport.yru.ac.th/'
-    ID_TOKEN_ISSUER = 'https://passport.yru.ac.th/'
+    API_URL = 'https://passport.yru.ac.th/'
+    AUTHORIZATION_URL = 'https://passport.yru.ac.th/oauth/authorize'
+    ACCESS_TOKEN_URL = 'https://passport.yru.ac.th/oauth/token'
+    ACCESS_TOKEN_METHOD = 'POST'
+    REDIRECT_STATE = False
+    DEFAULT_SCOPE = ['read_user']
+    EXTRA_DATA = [
+        ('id', 'id'),
+        ('expires_in', 'expires'),
+        ('refresh_token', 'refresh_token')
+    ]
+
+    def api_url(self, path):
+        api_url = self.setting('API_URL') or self.API_URL
+        return '{0}{1}'.format(api_url.rstrip('/'), path)
+
+    def authorization_url(self):
+        return self.api_url('/oauth/authorize')
+
+    def access_token_url(self):
+        return self.api_url('/oauth/token')
+
+    def get_user_details(self, response):
+        """Return user details from GitLab account"""
+        fullname, first_name, last_name = self.get_user_names(
+            response.get('name')
+        )
+        return {'username': response.get('username'),
+                'email': response.get('email') or '',
+                'fullname': fullname,
+                'first_name': first_name,
+                'last_name': last_name}
 
     def user_data(self, access_token, *args, **kwargs):
-        """Return user data from Google API"""
-        return self.get_json(
-            'https://passport.yru.ac.th/api/identity/userinfo',
-            params={'access_token': access_token, 'alt': 'json'}
-        )
+        """Loads user data from service"""
+        return self.get_json(self.api_url('/api/v4/user'), params={
+            'access_token': access_token
+        })
