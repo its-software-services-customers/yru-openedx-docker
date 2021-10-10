@@ -5,6 +5,6 @@ YRUOpenIdConnect:
 from .open_id_connect import OpenIdConnectAuth
 from .google import GoogleOAuth2
 
-class YRUOpenIdConnect(OpenIdConnectAuth):
+class YRUOpenIdConnect(GoogleOAuth2, OpenIdConnectAuth):
     name = 'yru-openidconnect'
     OIDC_ENDPOINT = 'https://passport.yru.ac.th/'
