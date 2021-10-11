@@ -12,7 +12,7 @@ class YRUOpenIdConnect2(BaseOAuth2):
     AUTHORIZATION_URL = 'https://passport.yru.ac.th/oauth/authorize'
     ACCESS_TOKEN_URL = 'https://passport.yru.ac.th/oauth/token'
     DEFAULT_SCOPE = ['openid', 'profile', 'email']
-    # REDIRECT_STATE = True
+    REDIRECT_STATE = False
     ACCESS_TOKEN_METHOD = 'POST'
 
     EXTRA_DATA = [
@@ -29,8 +29,7 @@ class YRUOpenIdConnect2(BaseOAuth2):
 
     def user_data(self, access_token, *args, **kwargs):
         response = self.get_json('https://passport.yru.ac.th/api/identity/userinfo',
-            headers={ 'Authorization': 'Bearer {}'.format(access_token) } )
-
+            params={'access_token': access_token})
         response = {
             'user_id': response['id'],
             'name': response['name'],
