@@ -16,7 +16,8 @@ class YRUOpenIdConnect2(BaseOAuth2):
     ACCESS_TOKEN_METHOD = 'POST'
 
     EXTRA_DATA = [
-        ('refresh_token', 'refresh_token', True)
+        ('refresh_token', 'refresh_token', True),
+        ('access_token', 'access_token', True)
     ]
 
     def get_user_details(self, response):
