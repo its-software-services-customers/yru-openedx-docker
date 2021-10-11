@@ -5,7 +5,7 @@ YRU OpenIdConnect
 from .open_id_connect import OpenIdConnectAuth
 
 class YRUOpenIdConnect2(OpenIdConnectAuth):
-    name = 'yru-openidconnect'
+    name = 'yru-openidconnect2'
     OIDC_ENDPOINT = 'https://passport.yru.ac.th/'
 
     def get_user_details(self, response):
