@@ -6,8 +6,8 @@ import ssl
 
 from .oauth import BaseOAuth2
 
-class YRUOpenIdConnect(BaseOAuth2):
-    name = 'yru-openidconnect'
+class YRUOpenIdConnect2(BaseOAuth2):
+    name = 'yru-openidconnect2'
     ID_KEY = 'user_id'
     AUTHORIZATION_URL = 'https://passport.yru.ac.th/oauth/authorize'
     ACCESS_TOKEN_URL = 'https://passport.yru.ac.th/oauth/token'
