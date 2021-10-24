@@ -7,16 +7,17 @@ course_mode_class = course_mode if course_mode else ''
 
 <main class="accomplishment accomplishment-main">
     <!-- Customize by Seub & Jew -->
-    <div class="wrapper-accomplishment-rendering">
+    <div class="wrapper-accomplishment-rendering" 
+        style="background-image:url('/static/certificates/images/bg-verified.png'); background-size:300 300; background-repeat:no-repeat; background-position:center;">
         <div class="accomplishment-rendering">
             <span class="deco-corner deco-corner-tl"></span>
             <span class="deco-corner deco-corner-tr"></span>
             <span class="deco-corner deco-corner-bl"></span>
             <span class="deco-corner deco-corner-br"></span>
 
-            <div class="accomplishment-type">
+            <div class="">
                 <span class="accomplishment-type-symbol">
-                    <img class="src" src="/static/certificates/images/ico-${course_mode_class}.png" alt="Image for course mode of type ${course_mode_class}">
+                    <img class="" src="/static/certificates/images/ico-verified.png" alt="Image for course mode of type honor" width="50" height="50">                    
                 </span>
 
                 <span class="accomplishment-type-label hd-3">${document_title}</span>
@@ -31,7 +32,7 @@ course_mode_class = course_mode if course_mode else ''
 
                         <span class="accomplishment-course hd-1 emphasized">
                             <!-- <span class="accomplishment-course-org">${accomplishment_copy_course_org}  </span> -->
-                            <span class="accomplishment-course-number">${course_number}</span>:
+                            <span class="accomplishment-course-number">${course_number} : </span>
                             <span class="accomplishment-course-name">${accomplishment_copy_course_name}</span>
                         </span>
                     </p>
@@ -68,7 +69,7 @@ course_mode_class = course_mode if course_mode else ''
 
             <div class="accomplishment-orgs">
                 <div class="organization organization-edX">
-                    <em><h3 style="text-align:center;">${certificate_id_number_title} : ${certificate_id_number}</h3></em>
+                    <em><h6 style="text-align:center;">${certificate_id_number_title} : ${certificate_id_number}</h6></em>
                 </div>                        
             </div>
         </div>
