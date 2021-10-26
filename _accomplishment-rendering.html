@@ -15,7 +15,7 @@ course_mode_class = course_mode if course_mode else ''
             <span class="deco-corner deco-corner-bl"></span>
             <span class="deco-corner deco-corner-br"></span>
 
-            <div class="accomplishment-type">
+            <div class="accomplishment-type" style="margin-bottom: 0rem;">
                 <span class="">
                     <img class="" src="https://storage.googleapis.com/yru-assets/yru-logo.png" 
                         alt="Image for course mode of type honor" width="91.2" height="112">                    
@@ -25,11 +25,11 @@ course_mode_class = course_mode if course_mode else ''
             </div>
 
             <div class="wrapper-statement-and-signatories">
-                <div class="accomplishment-statement">
+                <div class="accomplishment-statement" style="padding-bottom: 0rem">
                     <p class="accomplishment-statement-lead">
                         <span class="accomplishment-summary copy copy-lead">ขอมอบประกาศนียบัตรฉบับนี้เพื่อแสดงว่า</span>
                         <strong class="accomplishment-recipient hd-1 emphasized">${accomplishment_copy_name}</strong>
-                        <span class="accomplishment-summary copy copy-lead">สำเร็จการศึกษาในรายวิชา</span>
+                        <span class="accomplishment-summary copy copy-lead" style="margin-bottom: 0rem">สำเร็จการศึกษาในรายวิชา</span>
 
                         <span class="accomplishment-course hd-1 emphasized">
                             <!-- <span class="accomplishment-course-org">${accomplishment_copy_course_org}  </span> -->
@@ -42,7 +42,7 @@ course_mode_class = course_mode if course_mode else ''
                 </div>
 
                 % if mode != 'base':
-                <div class="accomplishment-signatories">
+                <div class="accomplishment-signatories" style="margin-bottom: 0rem; padding-bottom: 0rem">
                     <h3 class="accomplishment-signatories-title sr-only">${_("Noted by")}</h3>
 
                     <div class="wrapper-signatories">
