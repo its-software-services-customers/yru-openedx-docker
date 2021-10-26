@@ -9,9 +9,4 @@ COPY _accomplishment-rendering.html /openedx/edx-platform/lms/templates/certific
 RUN ls -lrt /openedx/edx-platform/lms/templates/certificates
 
 
-COPY yru-logo.png /openedx/edx-platform/lms/static/certificates/images/ico-verified.png
-COPY yru-bg.jpeg /openedx/edx-platform/lms/static/certificates/images/bg-verified.png
-RUN ls -lrt /openedx/edx-platform/lms/static/certificates/images
-
-
 RUN echo $(date) > /tmp/date.txt
