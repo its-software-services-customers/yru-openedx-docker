@@ -21,12 +21,12 @@ course_mode_class = course_mode if course_mode else ''
                         alt="Image for course mode of type honor" width="91.2" height="112">                    
                 </span>
                 
-                <span class="accomplishment-type-label hd-3">มหาวิทยาลัยราชภัฏยะลา</span>
+                <span class="accomplishment-type-label hd-3" style="font-family: 'Sarabun', sans-serif;">มหาวิทยาลัยราชภัฏยะลา</span>
             </div>
 
             <div class="wrapper-statement-and-signatories">
                 <div class="accomplishment-statement" style="padding-bottom: 0rem">
-                    <p class="accomplishment-statement-lead">
+                    <p class="accomplishment-statement-lead" style="font-family: 'Sarabun', sans-serif;">
                         <span class="accomplishment-summary copy copy-lead">ขอมอบประกาศนียบัตรฉบับนี้เพื่อแสดงว่า</span>
                         <strong class="accomplishment-recipient hd-1 emphasized">${accomplishment_copy_name}</strong>
                         <span class="accomplishment-summary copy copy-lead" style="margin-bottom: 0rem">สำเร็จการศึกษาในรายวิชา</span>
@@ -38,12 +38,12 @@ course_mode_class = course_mode if course_mode else ''
                         </span>
                     </p>
 
-                    <p class="accomplishment-statement-detail copy copy-lead">ผ่านระบบการเรียนรู้ออนไลน์แบบเปิด มหาวิทยาลัยราชภัฏยะลา (YRU MOOC)</p>
+                    <p class="accomplishment-statement-detail copy copy-lead" style="font-family: 'Sarabun', sans-serif;">ผ่านระบบการเรียนรู้ออนไลน์แบบเปิด มหาวิทยาลัยราชภัฏยะลา (YRU MOOC)</p>
                 </div>
 
                 % if mode != 'base':
                 <div class="accomplishment-signatories" style="margin-bottom: 0rem; padding-bottom: 0rem">
-                    <h3 class="accomplishment-signatories-title sr-only">${_("Noted by")}</h3>
+                    <h3 class="accomplishment-signatories-title sr-only" style="font-family: 'Sarabun', sans-serif;">${_("Noted by")}</h3>
 
                     <div class="wrapper-signatories">
                         <div class="list-signatories">
@@ -53,8 +53,8 @@ course_mode_class = course_mode if course_mode else ''
                                         <div class="signatory">
                                             <img class="" src="${static.url(signatory['signature_image_path'])}" alt="${signatory['name']}">
 
-                                            <h4 class="signatory-name hd-5">${signatory['name']}</h4>
-                                            <p class="signatory-credentials copy copy-micro">
+                                            <h4 class="signatory-name hd-5" style="font-family: 'Sarabun', sans-serif;">${signatory['name']}</h4>
+                                            <p class="signatory-credentials copy copy-micro" style="font-family: 'Sarabun', sans-serif;">
                                                 <span class="role">${signatory['title']}</span>
                                                 <span class="organization">${signatory['organization']}</span>
                                             </p>
@@ -70,7 +70,7 @@ course_mode_class = course_mode if course_mode else ''
 
             <div class="accomplishment-orgs">
                 <div class="organization organization-edX">
-                    <em><h6 style="text-align:center;">${certificate_id_number_title} : ${certificate_id_number}</h6></em>
+                    <em><h6 style="text-align:center; font-family:'Sarabun', sans-serif;">${certificate_id_number_title} : ${certificate_id_number}</h6></em>
                 </div>                        
             </div>
         </div>
