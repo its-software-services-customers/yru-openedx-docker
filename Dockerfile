@@ -6,6 +6,8 @@ COPY register.underscore /openedx/edx-platform/lms/templates/student_account/
 RUN ls -lrt /openedx/edx-platform/lms/templates/student_account/
 
 COPY _accomplishment-rendering.html /openedx/edx-platform/lms/templates/certificates
+COPY accomplishment-base.html /openedx/edx-platform/lms/templates/certificates
 RUN ls -lrt /openedx/edx-platform/lms/templates/certificates
+
 
 RUN echo $(date) > /tmp/date.txt
