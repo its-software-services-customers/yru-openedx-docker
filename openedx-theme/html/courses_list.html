@@ -1,0 +1,17 @@
+<%page expression_filter="h"/>
+<%namespace name='static' file='static_content.html'/>
+<%! from django.utils.translation import ugettext as _ %>
+
+<div class="album py-4 bg-light">
+    % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
+    <div class="container">
+        <h2 style="color:#000000">รายวิชาล่าสุด</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            ## limiting the course number by using HOMEPAGE_COURSE_MAX as the maximum number of courses
+            %for course in courses[:homepage_course_max]:
+            <%include file="course.html" args="course=course" />
+            %endfor
+        </div>
+    </div>
+    % endif
+</div>
