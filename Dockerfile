@@ -1,4 +1,4 @@
-FROM overhangio/openedx:12.1.2
+FROM overhangio/openedx:12.2.0
 
 RUN pip install python-jose>=3.0.0
 
