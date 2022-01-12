@@ -6,11 +6,6 @@ COPY register.underscore /openedx/edx-platform/lms/templates/student_account/
 COPY _accomplishment-rendering.html /openedx/edx-platform/lms/templates/certificates
 COPY accomplishment-base.html /openedx/edx-platform/lms/templates/certificates
 
-#COPY openedx-theme/html/* /openedx/edx-platform/lms/templates/
-#COPY openedx-theme/html/courseware/* /openedx/edx-platform/lms/templates/courseware/
-#COPY openedx-theme/html/dashboard/* /openedx/edx-platform/lms/templates/dashboard/
-#COPY openedx-theme/html/header/* /openedx/edx-platform/lms/templates/header/
-
 #openedx-theme/html
 COPY openedx-theme/html/course.html /openedx/edx-platform/lms/templates/
 COPY openedx-theme/html/courses_list.html /openedx/edx-platform/lms/templates/
