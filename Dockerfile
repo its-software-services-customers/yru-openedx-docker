@@ -9,7 +9,7 @@ COPY accomplishment-base.html /openedx/edx-platform/lms/templates/certificates
 #openedx-theme/html
 COPY openedx-theme/html/course.html /openedx/edx-platform/lms/templates/
 COPY openedx-theme/html/courses_list.html /openedx/edx-platform/lms/templates/
-COPY openedx-theme/html/dashboard.html /openedx/edx-platform/lms/templates/
+#COPY openedx-theme/html/dashboard.html /openedx/edx-platform/lms/templates/
 COPY openedx-theme/html/footer.html /openedx/edx-platform/lms/templates/ 
 COPY openedx-theme/html/index.html /openedx/edx-platform/lms/templates/
 COPY openedx-theme/html/index_overlay.html /openedx/edx-platform/lms/templates/
