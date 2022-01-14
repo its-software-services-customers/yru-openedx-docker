@@ -5,7 +5,11 @@ CUSTOM_DIR=/openedx-custom
 DEST_HTML=/openedx/edx-platform/lms/templates
 DEST_STATIC=/openedx/staticfiles
 
+echo "#### List files [${SRC_DIR}] ###"
 find ${SRC_DIR}
+
+echo "#### List files [${CUSTOM_DIR}] ###"
+find ${CUSTOM_DIR}
 
 echo "#### Start copy files ###"
 
