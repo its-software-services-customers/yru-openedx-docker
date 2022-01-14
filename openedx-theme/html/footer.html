@@ -1,0 +1,59 @@
+## mako
+<%page expression_filter="h"/>
+<%!
+  from django.urls import reverse
+  from django.utils.translation import ugettext as _
+  from lms.djangoapps.branding.api import get_footer
+  from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_enabled
+%>
+<% footer = get_footer(is_secure=is_secure) %>
+<% icp_license_info = getattr(settings, 'ICP_LICENSE_INFO', {})%>
+<%namespace name='static' file='static_content.html'/>
+
+<footer class="text-white py-3">
+    <div class="container">
+        <p class="float-end mb-1">
+            <a href="#" class="text-muted">Back to top</a>
+        </p>
+        <h3 class="text-brown fw-bold">ติดต่อสอบถาม</h3>
+        <p class="mb-4">
+            อาคารเทคโนโลยีสารสนเทศ มหาวิทยาลัยราชภัฏยะลา <br>
+            หมายเลขโทรศัพท์ 073-299699 ต่อ 20000 <br>
+            สายตรง 073-299636 โทรสาร 073-299636 <br>
+            อีเมล์ acitcinfo@yru.ac.th <br>
+        </p>
+        <p class="mb-1">Mooc YRU isR, © Your Website 2021. All Rights Reserved.</p>
+    </div>
+</footer>
+
+% if include_dependencies:
+  <%static:js group='base_vendor'/>
+  <%static:css group='style-vendor'/>
+  <%include file="widgets/segment-io.html" />
+  <%include file="widgets/segment-io-footer.html" />
+% endif
+% if footer_css_urls:
+  % for url in footer_css_urls:
+    <link rel="stylesheet" type="text/css" href="${url}"></link>
+  % endfor
+% endif
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+<script>
+    var myNav = document.getElementById("navbar-top");
+    window.onscroll = function () {
+        "use strict";
+        if (document.body.scrollTop >= 300 || document.documentElement.scrollTop >= 300) {
+            myNav.classList.add("navbar-solid");
+        } else {
+            myNav.classList.remove("navbar-solid");
+        }
+    };
+</script>

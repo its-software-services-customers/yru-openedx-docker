@@ -1,0 +1,56 @@
+<%page expression_filter="h"/>
+
+<%namespace name='static' file='static_content.html' />
+
+<%!
+from django.utils.translation import ugettext as _
+from openedx.core.djangolib.markup import HTML, Text
+%>
+
+<section class="container-fluid mx-0 px-0">
+    <div class="row mx-0 px-0">
+        <div class="col-lg-12 col-md-12 mx-0 px-0">
+            <img src="${static.url('images/pexels-thisisengineering-3861458.jpeg')}" class="img-fluid">
+        </div>
+    </div>
+</section>
+
+<section class="py-3 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-10 col-md-8 mx-auto">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 mx-auto">
+                    <div class="mb-3">
+                        <span class="fa-stack fa-4x text-pink">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fas fa-business-time fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <h5 class="fw-bold">ประหยัดเวลาและระยะทาง</h5>
+                    <p>เนื่องจากเป็นระบบการเรียนการสอนผ่านออนไลน์ ผู้เรียนสามารถเข้าเรียนในช่วงเวลาใดและเรียนที่ไหนก็ได้
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-3 mx-auto">
+                    <div class="mb-3">
+                        <span class="fa-stack fa-4x text-pink">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fas fa-chalkboard-teacher fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <h5 class="fw-bold">เข้าถึงได้ง่าย</h5>
+                    <p>ผู้เรียนสามารถเข้าเรียน ผ่านอุปกรณ์สื่อสารทุกชนิด</p>
+                </div>
+                <div class="col-lg-3 col-md-3 mx-auto">
+                    <div class="mb-3">
+                        <span class="fa-stack fa-4x text-pink">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fas fa-hand-sparkles fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <h5 class="fw-bold">ผู้เรียนเป็นศูนย์กลาง</h5>
+                    <p>ผู้เรียนสามารถเลือกวิชา ที่อยากเรียนได้ตามใจชอบ</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
