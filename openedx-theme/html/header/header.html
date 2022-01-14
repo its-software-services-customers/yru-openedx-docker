@@ -41,18 +41,18 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
     catch(e){window.attachEvent("onload", $buo_f)}
   </script>
 % endif
+
 <!-- custom css -->
 <style>
-.global-header {
-    border-bottom: none !important;
-    background-color: rgba(33,37,41,.75)!important;
-}
+    .global-header {
+        border-bottom: none !important;
+        background-color: rgba(33, 37, 41, .75) !important;
+    }
 </style>
 
 % if user.is_authenticated:
 <header class="global-header ${'slim' if course else ''}">
     <div class="main-header">
-        <%include file="navbar-logo-header.html" args="online_help_token=online_help_token" />
         <div class="hamburger-menu" role="button" aria-label=${_("Options Menu")} aria-expanded="false"
             aria-controls="mobile-menu" tabindex="0">
             <span class="line"></span>
