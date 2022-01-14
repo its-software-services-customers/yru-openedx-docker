@@ -1,0 +1,79 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%namespace name='static' file='../static_content.html'/>
+<%
+course_mode_class = course_mode if course_mode else ''
+%>
+
+<main class="accomplishment accomplishment-main">
+    <!-- Customize by Seub & Jew -->
+    <div class="wrapper-accomplishment-rendering" style="height: 210mm; width: 297mm">
+        <div class="accomplishment-rendering"
+            style="background-image:url('https://storage.googleapis.com/yru-assets/yru-bg8.png'); background-repeat:no-repeat; background-position:fixed;">
+            <span class="deco-corner deco-corner-tl"></span>
+            <span class="deco-corner deco-corner-tr"></span>
+            <span class="deco-corner deco-corner-bl"></span>
+            <span class="deco-corner deco-corner-br"></span>
+
+            <div class="accomplishment-type" style="margin-bottom: 0rem;">
+                <span class="">
+                    <img class="" src="https://storage.googleapis.com/yru-assets/yru-logo.png" 
+                        alt="Image for course mode of type honor" width="91.2" height="112">                    
+                </span>
+                
+                <span class="accomplishment-type-label hd-3" style="font-family: 'Sarabun', sans-serif;">มหาวิทยาลัยราชภัฏยะลา</span>
+            </div>
+
+            <div class="wrapper-statement-and-signatories" style="border-bottom: 0px;">
+                <div class="accomplishment-statement" style="padding-bottom: 0rem; border-bottom: 0px;">
+                    <p class="accomplishment-statement-lead" style="font-family: 'Sarabun', sans-serif;">
+                        <span class="accomplishment-summary copy copy-lead">ขอมอบประกาศนียบัตรฉบับนี้เพื่อแสดงว่า</span>
+                        <strong class="accomplishment-recipient hd-1 emphasized" style="font-family: 'Sarabun', sans-serif;">${accomplishment_copy_name}</strong>
+                        <span class="accomplishment-summary copy copy-lead" style="margin-bottom: 0rem">สำเร็จการศึกษาในรายวิชา</span>
+
+                        <span class="accomplishment-course hd-1 emphasized" style="font-family: 'Sarabun', sans-serif;">
+                            <!-- <span class="accomplishment-course-org">${accomplishment_copy_course_org}  </span> -->
+                            <!-- <span class="accomplishment-course-number">${course_number} : </span> -->
+                            <span class="accomplishment-course-name">${accomplishment_copy_course_name}</span>
+                        </span>
+                    </p>
+
+                    <p class="accomplishment-statement-detail copy copy-lead" style="font-family: 'Sarabun', sans-serif;">ผ่านระบบการเรียนรู้ออนไลน์แบบเปิด มหาวิทยาลัยราชภัฏยะลา (YRU MOOC)</p>
+                </div>
+
+                % if mode != 'base':
+                <div class="accomplishment-signatories" style="margin-bottom: 0rem; padding-bottom: 0rem; border-bottom: 0px">
+                    <h3 class="accomplishment-signatories-title sr-only" style="font-family: 'Sarabun', sans-serif;">${_("Noted by")}</h3>
+
+                    <div class="wrapper-signatories">
+                        <div class="list-signatories">
+                            % if certificate_data:
+                                % for signatory in certificate_data.get('signatories', []):
+                                    % if signatory.get('signature_image_path'):
+                                        <div class="signatory">
+                                            <img class="" src="${static.url(signatory['signature_image_path'])}" alt="${signatory['name']}" width="230" height="130">
+
+                                            <h4 class="signatory-name hd-6" style="font-family: 'Sarabun', sans-serif;">${signatory['name']}</h4>
+                                            <p class="signatory-credentials copy copy-micro" style="font-family: 'Sarabun', sans-serif;">
+                                                <span class="role">${signatory['title']}</span>
+                                                <span class="organization">${signatory['organization']}</span>
+                                            </p>
+                                        </div>
+                                    % endif
+                                % endfor
+                            % endif
+                        </div>
+                    </div>
+                </div>
+                % endif
+            </div>
+
+            <div class="accomplishment-orgs" style="margin-bottom:0rem; margin-top:3rem">
+                <div class="organization organization-edX">
+                    <em><span style="text-align:center; font-family:'Sarabun', sans-serif; float:left; font-size: 0.50rem;">${certificate_id_number_title} : ${certificate_id_number}</span></em>
+                    <em><span style="text-align:center; font-family:'Sarabun', sans-serif; float:right; font-size: 0.50rem;">${certificate_date_issued_title} : ${certificate_date_issued}</span></em>    
+                </div>                
+            </div>
+        </div>
+    </div>
+</main>
