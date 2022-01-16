@@ -13,7 +13,7 @@ find ${CUSTOM_DIR}
 
 echo "#### Start copy files ###"
 
-cp ${CUSTOM_DIR}/register.underscore ${DEST_HTML}/student_account/
+#cp ${CUSTOM_DIR}/register.underscore ${DEST_HTML}/student_account/
 cp ${CUSTOM_DIR}/_accomplishment-rendering.html ${DEST_HTML}/certificates/
 cp ${CUSTOM_DIR}/accomplishment-base.html ${DEST_HTML}/certificates/
 
