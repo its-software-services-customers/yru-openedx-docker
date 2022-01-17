@@ -9,4 +9,6 @@ RUN ./copy-files.bash
 ENV REGISTRATION_VALIDATION_RATELIMIT "100000/1m"
 ENV REGISTRATION_RATELIMIT "100000/1m"
 
+COPY common.py /openedx/edx-platform/lms/envs/
+
 RUN echo $(date) > /tmp/date.txt
