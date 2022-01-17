@@ -4,6 +4,7 @@ SRC_DIR=/openedx-theme
 CUSTOM_DIR=/openedx-custom
 DEST_HTML=/openedx/edx-platform/lms/templates
 DEST_STATIC=/openedx/staticfiles
+PY_COMMON_ENV=/openedx/edx-platform/lms/envs/common.py
 
 echo "#### List files [${SRC_DIR}] ###"
 find ${SRC_DIR}
@@ -24,3 +25,7 @@ cp -r ${SRC_DIR}/html/* ${DEST_HTML}/
 
 echo "#### List files dest dir [${DEST_HTML}] ###"
 find ${DEST_HTML}
+
+# https://discuss.openedx.org/t/registration-validation-endpoint-returning-403-in-lilac-rc1/5020
+echo "REGISTRATION_VALIDATION_RATELIMIT = '100000/m'" >> ${PY_COMMON_ENV}
+echo "REGISTRATION_RATELIMIT = '100000/m'" >> ${PY_COMMON_ENV}
