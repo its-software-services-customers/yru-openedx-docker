@@ -29,3 +29,4 @@ find ${DEST_HTML}
 # https://discuss.openedx.org/t/registration-validation-endpoint-returning-403-in-lilac-rc1/5020
 echo "REGISTRATION_VALIDATION_RATELIMIT = '100000/m'" >> ${PY_COMMON_ENV}
 echo "REGISTRATION_RATELIMIT = '100000/m'" >> ${PY_COMMON_ENV}
+
