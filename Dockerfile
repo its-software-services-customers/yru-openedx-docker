@@ -7,3 +7,5 @@ COPY copy-files.bash copy-files.bash
 RUN ./copy-files.bash
 
 RUN echo $(date) > /tmp/date.txt
+
+ENV TZ="Asia/Bangkok"
